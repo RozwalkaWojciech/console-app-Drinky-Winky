@@ -6,11 +6,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.infoshare.drinkywinky.utils.DateFormatter;
 import com.infoshare.drinkywinky.utils.Utils;
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Drink implements Comparable<Drink> {
+
     private final String id;
     private final String name;
     private final String category;
@@ -18,7 +22,6 @@ public class Drink implements Comparable<Drink> {
     private final String alcoholic;
     private final String dateModified;
     private final String glass;
-
     private List<String> ingredients = new ArrayList<>();
     private List<String> measures = new ArrayList<>();
 
@@ -83,43 +86,6 @@ public class Drink implements Comparable<Drink> {
         this.glass = glass;
         this.measures = measures;
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public String getRecipe() {
-        return recipe;
-    }
-
-    public String getAlcoholic() {
-        return alcoholic;
-    }
-
-    public String getDateModified() {
-        return dateModified;
-    }
-
-    public String getGlass() {
-        return glass;
-    }
-
-    public List<String> getIngredients() {
-        return ingredients;
-    }
-
-    public List<String> getMeasures() {
-        return measures;
-    }
-   
 
     @Override
     public String toString() {
